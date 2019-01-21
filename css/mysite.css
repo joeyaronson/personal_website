@@ -1,0 +1,160 @@
+.dark{
+	background-color: rgb(40, 44, 52)
+}
+
+.dark-nav{
+	background-color: rgb(45, 51, 61);
+}
+
+.dark-nav-item-yell{
+	color:rgb(249, 200, 89);
+}
+
+.dark-jumbo{
+	background-color: rgb(34, 37, 42);
+	color:lightgrey
+}
+
+.btn-cp {
+	margin:0.5rem;
+	padding-top: 0.25rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+	border-radius: 0.5rem;
+	color: #fff;
+	background-color: #F2655A;
+	border-color: rgb(206, 86, 78);
+	transition: all 0.25s ease-in-out;
+}
+
+.btn-cp:hover {
+	color: #fff;
+	background-color: rgb(206, 86, 78);
+	border-color: #F2655A;
+	transform: scale(1.05,1.05);
+	}
+	
+.btn-et {
+	margin:0.5rem;
+	padding-top: 0.25rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+	border-radius: 0.5rem;
+	color: #fff;
+	background-color: #7e976e;
+	border-color: #56694c;
+	transition: all 0.25s ease-in-out;
+}
+
+.btn-et:hover {
+	color: #fff;
+	background-color: #56694c;
+	border-color: #7e976e;
+	transform: scale(1.05,1.05);
+	
+}
+
+.btn-f {
+	color: #fff;
+	margin:0.5rem;
+	padding-top: 0.25rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+	border-radius: 0.5rem;
+	background-color: #ec4264;
+	border-color: #af3251;
+	transition: all 0.25s ease-in-out;
+}
+	
+.btn-f:hover {
+	
+	color: #fff;
+	background-color: #af3251;
+	border-color: #ec4264;
+	transform: scale(1.05,1.05);
+}
+
+.proj-header{
+	color:white;
+	display: inline-block;
+	padding: 1rem;
+	width: 100%;
+}
+
+.proj-top{
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+}
+
+.small-text{
+	font-size: 130%;
+}
+
+.med-text{
+	font-size: 180%;
+}
+
+.tiny-text{
+	font-size: 100%;
+}
+
+.sketch-card{
+	background-color: rgb(63, 68, 77);
+	padding: 1rem;
+	border-radius:2rem;
+	color:lightgrey;
+	width: 19rem;
+	margin: 1rem;
+	display: inline-block;
+	transition: all 0.25s ease-in-out;
+}
+
+.proj-card{
+	background-color: rgb(63, 68, 77);
+	color:lightgrey;
+	border-radius: 2rem;
+}
+
+
+.sketch-card:hover{
+	width: 19rem;
+	margin: 1rem;
+	display: inline-block;
+	transform: scale(1.05,1.05);
+}
+
+.card-pack{
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+}
+
+.card-pic{
+	border-radius: 1rem;
+}
+
+.page-footer{
+	padding:1rem;
+	color:lightgray;
+	background-color: rgb(45, 51, 61);
+}
+
+hr{
+	border-color:#ec4264;
+	border-width: 0.125rem;
+}
+
+a{
+	color:lightgray;
+}
+
+a:hover{
+	color:rgb(126, 126, 126);
+}
+
+.white-space{
+	height:2rem;
+}
