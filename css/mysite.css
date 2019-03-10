@@ -97,6 +97,10 @@
 	font-size: 180%;
 }
 
+.large-text{
+	font-size: 280%;
+}
+
 .tiny-text{
 	font-size: 100%;
 }
@@ -157,4 +161,36 @@ a:hover{
 
 .white-space{
 	height:2rem;
+}
+
+@media (min-width: 576px) {
+	.container {
+	  max-width: 540px;
+	}
+}
+  
+  @media (min-width: 768px) {
+	.container {
+	  max-width: 720px;
+	}
+}
+  
+  @media (min-width: 992px) {
+	.container {
+	  max-width: 960px;
+	}
+	.image{
+
+	}
+}
+  
+  @media (min-width: 1200px) {
+	.container {
+	  max-width: 1140px;
+	}
+	.projects{
+		padding-left: 20em;
+		padding-right:20em;
+		margin: 2em;
+	}
 }
