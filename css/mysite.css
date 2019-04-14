@@ -3,7 +3,8 @@
 }
 
 .dark-nav{
-	background-color: rgb(45, 51, 61);
+	/* background-color: rgb(45, 51, 61); */
+	background-color: rgb(28, 108, 182);
 }
 
 .dark-nav-item-yell{
@@ -147,7 +148,9 @@
 }
 
 hr{
-	border-color:#ec4264;
+	/* border-color:#ec4264; */
+	border-color: rgb(28, 108, 182);
+
 	border-width: 0.125rem;
 }
 
