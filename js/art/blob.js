@@ -27,7 +27,6 @@ for(let i = 0; i < nodes.length;i++){
     nodes[i].display();
     nodes[i].move();
 }
-console.log(frameCount,100,100);
 timer+=0.5;
 }
 

@@ -41,7 +41,7 @@ function draw() {
 
     resetMatrix();
 
-    text("joey aronson 2018",50,height-100)
+    text("joey aronson 2018",50,height-100);
     angle+=0.06;
     col+=0.25;
 }

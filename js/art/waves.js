@@ -7,8 +7,6 @@ function setup() {
     strokeWeight(2.3);
     colorMode(HSB,100);
     //frameRate(40);
-    console.log("AHHHHHHHHHHH");
-
 
 }
 
