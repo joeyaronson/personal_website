@@ -29,10 +29,32 @@
 	transition: all 0.25s ease-in-out;
 }
 
+
 .btn-cp:hover {
 	color: #fff;
 	background-color: rgb(206, 86, 78);
 	border-color: #F2655A;
+	transform: scale(1.05,1.05);
+	}
+
+.btn-apf {
+	margin:0.5rem;
+	padding-top: 0.25rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+	border-radius: 0.5rem;
+	color: #fff;
+	background-color: #006eff;
+	border-color: #03387e;
+	transition: all 0.25s ease-in-out;
+}
+
+
+.btn-apf:hover {
+	color: #fff;
+	background-color: #003780;
+	border-color: #006eff;
 	transform: scale(1.05,1.05);
 	}
 	

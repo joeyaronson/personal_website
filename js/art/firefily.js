@@ -22,7 +22,7 @@ function draw() {
     globalColor+=0.5;
     fill(100)
     textSize(20)
-    if(frameRate() < 58){
+    if(frameRate() < 30){
         p.splice(0,1);
     }
     if(frameRate() > 60){
