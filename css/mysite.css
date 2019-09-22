@@ -219,8 +219,12 @@ a:hover{
 
 
 .centered{
-	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-
+	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.photo-container{
+	text-align: center;
+	padding: 10em;
 }
