@@ -226,5 +226,6 @@ a:hover{
 
 .photo-container{
 	text-align: center;
+	margin: auto;
 	padding: 10em;
 }
