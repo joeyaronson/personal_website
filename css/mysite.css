@@ -143,6 +143,7 @@
 	background-color: rgb(63, 68, 77);
 	color:lightgrey;
 	border-radius: 2rem;
+	max-width: 1920px;
 }
 
 
@@ -207,13 +208,19 @@ a:hover{
 	
 }
   
-  @media (min-width: 1200px) {
-	.container {
-	  max-width: 1140px;
-	}
+  @media (min-width: 1920px) {
 	.projects{
 		padding-left: 20em;
 		padding-right:20em;
-		margin: 2em;
+		margin: auto;
+		max-width: 1920px;
 	}
+}
+
+
+.centered{
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+
+	justify-content: center;
+	align-items: center;
 }
