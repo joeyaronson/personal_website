@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Photos</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/mysite.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="shortcut icon" href=img/icon.png />
-	
-	<script>
-		function setIframeHeight(){
-			$("#iframe-container").height($("#photo-iframe").height());
-		}
-
-		$(document).ready(function (){
-			setIframeHeight();
-		});
-
-		$(window).resize(function(){
-			setIframeHeight();
-		})
-
-	</script>
-
-</head>
-
-<body class="dark">
-    <nav class="navbar navbar-dark navbar-expand-lg dark-nav">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/icon-05.png" width="60" height="60" class="d-inline-block align-top"> </a>
-        <a class="navbar-brand" href="index.html">Joseph Aronson</a>
-        <button class="navbar-toggler type=" button " data-toggle="collapse " data-target="#navbarNavAltMarkup " aria-controls="navbarNavAltMarkup " aria-expanded="false " aria-label="Toggle navigation ">
-				<span class="navbar-toggler-icon " ></span>
+	<head>
+		<title>Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/mysite.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+			crossorigin="anonymous"
+		/>
+		<link rel="shortcut icon" href=img/icon.png />
+	</head>
+	<body class="dark">
+		<nav class="navbar navbar-dark navbar-expand-lg dark-nav">
+			<a class="navbar-brand" href="index.html">
+				<img
+					src="img/icon-05.png"
+					width="60"
+					height="60"
+					class="d-inline-block align-top"
+				/>
+			</a>
+			<a class="navbar-brand" href="index.html">Joseph Aronson</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse " id="navbarNavAltMarkup ">
-				<div class="navbar-nav ">
-					<a class="nav-item nav-link " href="index.html ">Home <span class="sr-only ">(current)</span></a>
-					<a class="nav-item nav-link " href="projects.html ">Projects</a>
-					<a class="nav-item nav-link " href="sketches.html ">Creative Coding</a>
-					<a class="nav-item nav-link active " href="photos.html ">Photos</a>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="index.html"
+						>Home <span class="sr-only">(current)</span></a
+					>
+					<a class="nav-item nav-link active" href="projects.html">Projects</a>
+					<a class="nav-item nav-link" href="sketches.html">Creative Coding</a>
 				</div>
 			</div>
 		</nav>
@@ -55,43 +57,19 @@
 			<iframe id="photo-iframe"style="position: relative; top: 0; left: 0; width: 100%; height: 100%;" src="https://flickrembed.com/cms_embed.php?source=flickr&layout=responsive&input=www.flickr.com/photos/156453310@N07/albums/72157697909554992&sort=0&by=album&theme=tiles&scale=fill&speed=3000&limit=500&skin=default&autoplay=true" scrolling="yes" frameborder="0" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"><p><a  href="https://www.freecarcheck.uk/guides/">Free Car Checker</a></p><small>Powered by <a href="https://flickrembed.com">flickr embed</a>.</small></iframe><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
 		</div>
 
-	
-			<!-- footer -->
-		<div class='white-space'></div>
+		<div class="white-space"></div>
 		<footer class="page-footer ">
-
-			<div class="col-md-4 col-lg-4 col-xl-4 mx-autoz ">
-					<!-- Links -->
-					<h6 class="display-4 med-text ">Contact</h6>
-					<hr>
-					<p>
-						<i class="fas fa-home mr-3 "></i>644 Whitethorne Drive, San Jose CA</p>
-					<p>
-						<a href="mailto: aronsonjoey@gmail.com ">
-							<i class="fas fa-envelope mr-3 "></i> aronsonjoey@gmail.com</a>
-					</p>
-					<p>
-						<i class="fas fa-phone mr-3 "></i> 650-417-8085</p>
-					<p>
-						<a href="https://www.linkedin.com/in/josephyaronson/ ">
-							<i class="fab fa-linkedin mr-3 "></i> @josephyaronson</a>
-					</p>
-
-					<p>
-						<a href="https://github.com/joeyaronson ">
-							<i class="fab fa-github mr-3 "></i> @joeyaronson</a>
-					</p>
-					<p>
-						<a href=https://www.openprocessing.org/user/134483">
-        <i class="fas fa-paint-brush mr-3"></i> OpenProcessing</a>
-        </p>
-
-
-        </div>
-
-        </footer>
-
-
-</body>
-
+			<div class="col-md-4 col-lg-4 col-xl-4 mx-autoz">
+				<!-- Links -->
+				<h6 class="display-4 med-text">Contact</h6>
+				<hr />
+				<p><i class="fas fa-home mr-3"></i>2148 Leon Drive, San Jose, CA</p>
+				<p><i class="fas fa-envelope mr-3"></i> aronsonjoey@gmail.com</p>
+				<p><i class="fas fa-phone mr-3"></i> 650-417-8085</p>
+				<a href="https://www.linkedin.com/in/josephyaronson/">
+					<i class="fab fa-linkedin mr-3"></i> @josephyaronson</a
+				>
+			</div>
+		</footer>
+	</body>
 </html>
