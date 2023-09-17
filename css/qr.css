@@ -3,32 +3,108 @@
     src: url('white-rabbit.woff') format('woff'),
 
 }
-  
+
+
 .window {
     background-color: black;
     border: solid 4px #00ff00;
     color: #00ff00;
     font-size: 26px;
+    margin: 16px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-family: 'whiteRabbit', Arial, sans-serif;
-
+    font-family: 'whiteRabbit', "Courier New", sans-serif;
 }
+
+.window:nth-child(1) {
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    top: 16px;
+}
+
+.window:nth-child(2) {
+    width: 800px;
+    height: 2000px;
+    position: absolute;
+    top: 16px;
+    left: 1256px;
+}
+
+.window:nth-child(3) {
+    width: 576px;
+    height: 1600px;
+    position: absolute;
+    top: 860px;
+}
+
+.window:nth-child(4) {
+    width: 576px;
+    height: 480px;
+    position: absolute;
+    top: 860px;
+    left: 632px;
+}
+
+.window:nth-child(5) {
+    width: 576px;
+    height: 293px;
+    position: absolute;
+    top: 1390px;
+    left: 632px;
+}
+
+.window:nth-child(6) {
+    width: 576px;
+    height: 293px;
+    position: absolute;
+    top: 1720px;
+    left: 632px;
+}
+
+.window:nth-child(7) {
+    width: 1426px;
+    height: 400px;
+    position: absolute;
+    top: 2056px;
+    left: 632px;
+}
+
 
 .window-title {
     background-color: #00ff00;
     color: black;
     padding: 8px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .window-content {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.footer {
+    height: 32px;
+    position: absolute;
+    top: 2500px;
+    left: 0px;
+    /* background-color: aqua; */
+}
+
+.block {
+    width: 8px;
+    height: 30px;
+    margin-left: 8px;
+    background-color: black;
+}
+.endcap{
+    display: flex;
 }
 
 body {
