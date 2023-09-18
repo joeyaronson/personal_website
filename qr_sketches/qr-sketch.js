@@ -17,8 +17,8 @@ let waveSketch = (w) => {
     let fc = 0;
     w.draw = () => {
         w.background(0);
-        w.rotateX(3500);
-        w.rotateZ(fc * 50)
+        w.rotateX(60);
+        w.rotateZ(fc)
 
         for (let i = 0; i < t.length; i++) {
             t[i].move();
@@ -41,8 +41,8 @@ let waveSketch = (w) => {
             let y = -w.width / 4 + this.y * (SIZE)
 
             w.translate(x, y, this.z);
-            w.rotateX((this.z + fc) * 50)
-            w.rotateY((this.z + fc) * 100);
+            w.rotateX((this.z + fc))
+            w.rotateY((this.z + fc)*2);
             w.box(SIZE, SIZE, SIZE / 5);
 
             w.pop();
@@ -266,8 +266,8 @@ let codeSketch = (w) => {
 
         w.textSize(32);
         w.fill(0, 255, 0);
-        c1 = new Code(string, 20, 20, 650, w.height - 20, true);
-        c2 = new Code(string2, 620, 20, 1000, w.height - 20);
+        c1 = new Code(string, 20, 40, 650, w.height - 20, true);
+        c2 = new Code(string2, 620, 40, 1000, w.height - 20);
 
         currentCode = c1;
     }
@@ -361,7 +361,7 @@ resetMatrix();
                     if (this.dir === "type") {
                         this.delay = 3
                         this.typeIndex++;
-                    
+
                     }
                 }
             }
@@ -394,10 +394,65 @@ resetMatrix();
 
 }
 
+let quarkSketch = (w) => {
+
+    w.setup = () => {
+        font = w.loadFont("../qr_sketches/whiterabbit.ttf");
+        let myCanvas = w.createCanvas(575, 248);
+
+        myCanvas.parent("quark-container");
+        w.textWrap(w.CHAR);
+
+        w.textFont(font);
+
+        w.textSize(32);
+        w.fill(0, 255, 0);
+        rando = loadRando();
+    }
+
+    const loadRando = () => {
+        let ranArr = [];
+        for (let i = 0; i < 68; i++) {
+            ranArr.push(String.fromCharCode(w.floor(w.random(33, 125))));
+        }
+        return ranArr.join("");
+    };
+    let string = `dG8gc2VlIHNvbWV0aGluZyBjb29sLCBzY2FuIHRoaXMgcXIgY29kZS4uLiBvciBkb250`;
+    let rando = "";
+    let completeTimer = 200;
+    w.draw = () => {
+        w.background(0);
+        w.rect(20, 20, 200, 200);
+        if (w.frameCount % 2 === 0) {
+            let tempRan = [];
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] != rando[i]) {
+                    tempRan.push(String.fromCharCode(w.floor(w.random(33, 125))));
+                } else {
+                    tempRan.push(string[i]);
+                }
+            }
+            rando = tempRan.join("");
+        }
+        w.text(rando, 240, 70, w.width / 1.75, w.height);
+        if (string === rando) {
+            completeTimer++;
+        }
+
+        if (completeTimer > 400) {
+            rando = loadRando();
+            completeTimer = 0;
+        }
+    }
+
+}
+
+
 
 let wave = new p5(waveSketch);
 let torus = new p5(torusSketch);
 let cube = new p5(cubeSketch);
 let audio = new p5(audioSketch)
 let code = new p5(codeSketch)
+let quark = new p5(quarkSketch)
 
