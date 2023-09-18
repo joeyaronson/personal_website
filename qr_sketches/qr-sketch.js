@@ -264,17 +264,19 @@ let audioSketch = (w) => {
 }
 
 let codeSketch = (w) => {
-    w.setup = () => {
+    w.preload = () =>{
         font = w.loadFont("../qr_sketches/whiterabbit.ttf");
+    }
+    w.setup = () => {
 
-        let myCanvas = w.createCanvas(1426, 354);
+        let myCanvas = w.createCanvas(713, 155);
         myCanvas.parent("code-container");
         w.textFont(font);
 
-        w.textSize(32);
+        w.textSize(14);
         w.fill(0, 255, 0);
-        c1 = new Code(string, 20, 40, 650, w.height - 20, true);
-        c2 = new Code(string2, 620, 40, 1000, w.height - 20);
+        c1 = new Code(string, 20, 18, 650, w.height - 20, true);
+        c2 = new Code(string2, 300, 18, 1000, w.height - 20);
 
         currentCode = c1;
     }
@@ -402,17 +404,18 @@ resetMatrix();
 }
 
 let quarkSketch = (w) => {
-
-    w.setup = () => {
+    w.preload = () =>{
         font = w.loadFont("../qr_sketches/whiterabbit.ttf");
-        let myCanvas = w.createCanvas(575, 248);
+    }
+    w.setup = () => {
+        let myCanvas = w.createCanvas(288, 102);
 
         myCanvas.parent("quark-container");
         w.textWrap(w.CHAR);
 
         w.textFont(font);
 
-        w.textSize(32);
+        w.textSize(19);
         w.fill(0, 255, 0);
         rando = loadRando();
     }
@@ -429,7 +432,7 @@ let quarkSketch = (w) => {
     let completeTimer = 200;
     w.draw = () => {
         w.background(0);
-        w.rect(20, 20, 200, 200);
+        w.rect(10, 10, 80, 80);
         if (w.frameCount % 2 === 0) {
             let tempRan = [];
             for (let i = 0; i < string.length; i++) {
@@ -441,7 +444,7 @@ let quarkSketch = (w) => {
             }
             rando = tempRan.join("");
         }
-        w.text(rando, 240, 70, w.width / 1.75, w.height);
+        w.text(rando, 100, 20, 190, w.height);
         if (string === rando) {
             completeTimer++;
         }
@@ -460,6 +463,6 @@ let wave = new p5(waveSketch);
 let torus = new p5(torusSketch);
 let cube = new p5(cubeSketch);
 let audio = new p5(audioSketch)
-// let code = new p5(codeSketch)
-// let quark = new p5(quarkSketch)
+let code = new p5(codeSketch)
+let quark = new p5(quarkSketch)
 

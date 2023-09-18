@@ -117,7 +117,5 @@ body {
 .container {
     /* background-color: aqua; */
     position: relative;
-    width:2100px;
-    height: 2500px;
-
+    width:1100px;
 }
