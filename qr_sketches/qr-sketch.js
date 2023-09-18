@@ -381,6 +381,9 @@ resetMatrix();
                 } else {
                     showCursor = "_";
                 }
+                if(this.deleted){
+                    showCursor = "_"
+                }
             }
             w.text(currentText + showCursor, this.x, this.y, this.w, this.h);
 
