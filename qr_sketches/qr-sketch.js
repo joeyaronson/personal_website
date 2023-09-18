@@ -466,6 +466,7 @@ let tephroSketch = (w) => {
         w.angleMode(w.DEGREES)
         myCanvas.parent("tephro-container");
         w.stroke(0, 255, 0)
+        w.strokeWeight(0.4)
         w.fill(0)
 
     }
