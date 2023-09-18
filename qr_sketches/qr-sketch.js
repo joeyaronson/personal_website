@@ -1,6 +1,6 @@
 let waveSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(600, 355, w.WEBGL);
+        let myCanvas = w.createCanvas(604, 357, w.WEBGL);
         myCanvas.parent("wave-container");
 
         w.rectMode(w.CENTER);
@@ -67,7 +67,7 @@ let waveSketch = (w) => {
 
 let torusSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(400, 945, w.WEBGL);
+        let myCanvas = w.createCanvas(400, 962, w.WEBGL);
         myCanvas.parent("torus-container");
 
         // w.angleMode(w.DEGREES);
@@ -118,7 +118,7 @@ let torusSketch = (w) => {
 
 let cubeSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(288, 194, w.WEBGL);
+        let myCanvas = w.createCanvas(288, 212, w.WEBGL);
         myCanvas.parent("cube-container");
         w.rectMode(w.CENTER);
         loadCubes();
@@ -234,7 +234,7 @@ let cubeSketch = (w) => {
 
 let audioSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(288, 102);
+        let myCanvas = w.createCanvas(288, 120);
 
         myCanvas.parent("audio-container");
 
@@ -264,19 +264,19 @@ let audioSketch = (w) => {
 }
 
 let codeSketch = (w) => {
-    w.preload = () =>{
+    w.preload = () => {
         font = w.loadFont("../qr_sketches/whiterabbit.ttf");
     }
     w.setup = () => {
 
-        let myCanvas = w.createCanvas(713, 155);
+        let myCanvas = w.createCanvas(713, 173);
         myCanvas.parent("code-container");
         w.textFont(font);
 
-        w.textSize(14);
+        w.textSize(15);
         w.fill(0, 255, 0);
-        c1 = new Code(string, 20, 18, 650, w.height - 20, true);
-        c2 = new Code(string2, 300, 18, 1000, w.height - 20);
+        c1 = new Code(string, 20, 22, 650, w.height - 20, true);
+        c2 = new Code(string2, 300, 22, 1000, w.height - 20);
 
         currentCode = c1;
     }
@@ -404,11 +404,11 @@ resetMatrix();
 }
 
 let quarkSketch = (w) => {
-    w.preload = () =>{
+    w.preload = () => {
         font = w.loadFont("../qr_sketches/whiterabbit.ttf");
     }
     w.setup = () => {
-        let myCanvas = w.createCanvas(288, 102);
+        let myCanvas = w.createCanvas(288, 120);
 
         myCanvas.parent("quark-container");
         w.textWrap(w.CHAR);
@@ -432,7 +432,7 @@ let quarkSketch = (w) => {
     let completeTimer = 200;
     w.draw = () => {
         w.background(0);
-        w.rect(10, 10, 80, 80);
+        w.rect(10, 20, 80, 80);
         if (w.frameCount % 2 === 0) {
             let tempRan = [];
             for (let i = 0; i < string.length; i++) {
@@ -444,7 +444,7 @@ let quarkSketch = (w) => {
             }
             rando = tempRan.join("");
         }
-        w.text(rando, 100, 20, 190, w.height);
+        w.text(rando, 100, 30, 190, w.height);
         if (string === rando) {
             completeTimer++;
         }
@@ -457,6 +457,33 @@ let quarkSketch = (w) => {
 
 }
 
+let tephroSketch = (w) => {
+    w.preload = () => {
+        tephroOBJ = w.loadModel('../qr_sketches/tephro.obj');
+    }
+    w.setup = () => {
+        let myCanvas = w.createCanvas(288, 773, w.WEBGL);
+        w.angleMode(w.DEGREES)
+        myCanvas.parent("tephro-container");
+        w.stroke(0, 255, 0)
+        w.fill(0)
+
+    }
+
+
+    w.draw = () => {
+        w.push();
+
+        w.translate(0, 30, 0)
+        w.scale(2300);
+        w.background(0)
+        w.rotateZ(270);
+        w.rotateX(w.frameCount);
+        w.model(tephroOBJ);
+        w.pop();
+    }
+
+}
 
 
 let wave = new p5(waveSketch);
@@ -465,4 +492,5 @@ let cube = new p5(cubeSketch);
 let audio = new p5(audioSketch)
 let code = new p5(codeSketch)
 let quark = new p5(quarkSketch)
+let tephro = new p5(tephroSketch)
 
