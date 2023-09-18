@@ -454,5 +454,5 @@ let torus = new p5(torusSketch);
 let cube = new p5(cubeSketch);
 let audio = new p5(audioSketch)
 let code = new p5(codeSketch)
-let quark = new p5(quarkSketch)
+// let quark = new p5(quarkSketch)
 
