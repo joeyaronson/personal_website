@@ -1,11 +1,12 @@
 let waveSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(1200, 754, w.WEBGL);
+        let myCanvas = w.createCanvas(600, 355, w.WEBGL);
         myCanvas.parent("wave-container");
 
         w.rectMode(w.CENTER);
         w.angleMode(w.DEGREES);
-        SIZE = w.width / 30;
+        SIZE = w.width / 15;
+
         w.stroke(0, 255, 0);
         w.fill(0);
         w.loadTiles();
@@ -42,7 +43,7 @@ let waveSketch = (w) => {
 
             w.translate(x, y, this.z);
             w.rotateX((this.z + fc))
-            w.rotateY((this.z + fc)*2);
+            w.rotateY((this.z + fc) * 2);
             w.box(SIZE, SIZE, SIZE / 5);
 
             w.pop();
@@ -50,7 +51,7 @@ let waveSketch = (w) => {
         }
         move() {
             this.d = w.dist(0, 0, -w.width / 4 + this.x * (SIZE), -w.width / 4 + this.y * (SIZE));
-            this.z += w.sin(this.d + fc)
+            this.z += w.sin(this.d * 2 + fc) / 1.5
         }
     }
 
@@ -66,11 +67,10 @@ let waveSketch = (w) => {
 
 let torusSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(800, 1954, w.WEBGL);
+        let myCanvas = w.createCanvas(400, 945, w.WEBGL);
         myCanvas.parent("torus-container");
 
         // w.angleMode(w.DEGREES);
-        SIZE = w.width / 30;
         w.stroke(0, 255, 0);
         w.fill(0);
     }
@@ -79,35 +79,38 @@ let torusSketch = (w) => {
 
 
         w.push()
-        w.translate(0, -650)
+        w.translate(0, -320)
         w.rotateY(w.radians(w.frameCount))
 
-        w.torus(125, 100, 24, 12)
+        w.torus(75, 50, 20, 8)
+
         w.pop()
 
         w.push()
-        w.translate(0, -100)
+        w.translate(0, -50)
         w.rotateY(w.radians(w.frameCount * 1.1))
         w.rotateX(w.radians(20))
 
-        w.torus(125, 100, 24, 12)
+        w.torus(75, 50, 20, 8)
+
         w.pop()
 
         w.push()
-        w.translate(0, 350)
+        w.translate(0, 150)
         w.rotateY(w.radians(w.frameCount * 1.2))
         w.rotateX(w.radians(60))
 
-        w.torus(125, 100, 24, 12)
+        w.torus(75, 50, 20, 8)
+
         w.pop()
 
 
         w.push()
-        w.translate(0, 750)
+        w.translate(0, 340)
         w.rotateY(w.radians(w.frameCount * 1.3))
         w.rotateX(w.radians(90))
 
-        w.torus(125, 100, 24, 12)
+        w.torus(75, 50, 20, 8)
         w.pop()
 
     }
@@ -115,11 +118,11 @@ let torusSketch = (w) => {
 
 let cubeSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(575, 434, w.WEBGL);
+        let myCanvas = w.createCanvas(288, 194, w.WEBGL);
         myCanvas.parent("cube-container");
-        // w.angleMode(w.DEGREES);
         w.rectMode(w.CENTER);
         loadCubes();
+        w.frameRate(30);
     }
     const pos = [
         [-1, -1, -1],
@@ -132,8 +135,8 @@ let cubeSketch = (w) => {
         [1, 1, 1],
     ];
     const loadCubes = () => {
-        c.push(new Cube(50, 0));
-        c.push(new Cube(100, 361));
+        c.push(new Cube(25, 0));
+        c.push(new Cube(40, 361));
     };
 
 
@@ -175,7 +178,7 @@ let cubeSketch = (w) => {
             this.t = t;
             this.w = 0;
 
-            this.s2 = 50;
+            this.s2 = 25;
             this.ps = [];
         }
 
@@ -210,20 +213,20 @@ let cubeSketch = (w) => {
 
         move() {
             if (this.t <= 180) {
-                this.s = +w.cos(w.radians(this.t + 180)) * 50 + this.s2;
+                this.s = +w.cos(w.radians(this.t + 180)) * 25 + this.s2;
 
                 this.x = -w.sin(w.radians(this.t)) * 500;
 
                 this.t++;
             } else {
                 this.w++;
-                this.s2 -= 100 / 180;
+                this.s2 -= 40 / 180;
             }
 
             if (this.w > 180) {
                 this.t = 0;
                 this.w = 0;
-                this.s2 = 50;
+                this.s2 = 25;
             }
         }
     }
@@ -231,7 +234,7 @@ let cubeSketch = (w) => {
 
 let audioSketch = (w) => {
     w.setup = () => {
-        let myCanvas = w.createCanvas(575, 248);
+        let myCanvas = w.createCanvas(288, 102);
 
         myCanvas.parent("audio-container");
 
@@ -246,11 +249,15 @@ let audioSketch = (w) => {
         w.background(0);
 
 
-        w.line(20, 200, 555, 200);
+        w.line(10, 90, 278, 90);
+
+
         for (let i = 0; i < 25; i++) {
-            let n = w.noise(i * 3 * noiseVal, w.frameCount * noiseVal) * 200
-            let lh = w.sin(i * 30 + w.frameCount * 10) * 20 + n;
-            w.rect(40 + i * 20, 200 - lh, 5, lh);
+            let n = w.noise(i * 3 * noiseVal, w.frameCount * noiseVal) * 90
+            let lh = w.sin(i * 30 + w.frameCount * 10) * 10 + n;
+            w.rect(20 + i * 10, 90 - lh, 3, lh);
+
+
 
         }
     }
@@ -449,10 +456,10 @@ let quarkSketch = (w) => {
 
 
 
-// let wave = new p5(waveSketch);
-// let torus = new p5(torusSketch);
-// let cube = new p5(cubeSketch);
-// let audio = new p5(audioSketch)
+let wave = new p5(waveSketch);
+let torus = new p5(torusSketch);
+let cube = new p5(cubeSketch);
+let audio = new p5(audioSketch)
 // let code = new p5(codeSketch)
 // let quark = new p5(quarkSketch)
 
